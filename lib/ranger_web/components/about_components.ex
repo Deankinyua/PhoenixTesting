@@ -2,6 +2,7 @@ defmodule RangerWeb.AboutComponents do
   use Phoenix.Component
 
   attr :type, :string,
+  # * giving a predefined list means that the item should be one of these
     values: ["hobbit", "wizard", "human", "elf", "dwarf"],
     required: true
 
@@ -14,12 +15,13 @@ defmodule RangerWeb.AboutComponents do
   end
 
   defp colors_from_badge_type(type) do
+    # * A rare case of when string keys are preferred in maps :)
     %{
-      "hobbit" => "bg-green-700 text-green-100",
+      "hobbit" => "bg-[#1ECBE1] text-[#E1341E]",
       "human" => "bg-blue-700 text-blue-100",
       "dwarf" => "bg-yellow-700 text-yellow-100",
-      "wizard" => "bg-red-700 text-red-100",
-      "elf" => "bg-gray-700 text-gray-100"
+      "wizard" => "bg-[#19E632] text-[#E619CD]",
+      "elf" => "bg-[#11E1EE] text-[#EE1E11]"
     }[type]
   end
 

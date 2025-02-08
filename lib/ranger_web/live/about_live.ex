@@ -3,6 +3,8 @@ defmodule RangerWeb.AboutLive do
 
   import RangerWeb.AboutComponents
 
+  # badge and card components are defined here
+
   alias Ranger.FellowshipMember
 
   def render(assigns) do
@@ -76,6 +78,11 @@ defmodule RangerWeb.AboutLive do
         "Boromir",
         "human",
         "One of the Men of Gondor, from the city of Minas Tirith in the south. Boromir is a valiant fighter and is always trustworthy in battle, but his pride and recklessness make him vulnerable to the Ring’s power."
+      ),
+      FellowshipMember.new(
+        "Dean",
+        "hobbit",
+        "The King."
       )
     ]
   end

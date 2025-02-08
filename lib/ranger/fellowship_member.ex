@@ -1,8 +1,10 @@
 defmodule Ranger.FellowshipMember do
+
+  alias Ranger.FellowshipMember
   defstruct [:name, :type, :description]
 
   def new(name, type, description) do
-    %__MODULE__{
+    %FellowshipMember{
       name: name,
       type: type,
       description: description
