@@ -5,6 +5,8 @@ defmodule RangerWeb.TodoLive do
   alias Ranger.Todo
 
   def render(assigns) do
+    # * Here we have purposefully used a data-* attribute as a selector
+    # * It can also be used for storing some data on the client
     ~H"""
     <ul id="todos" phx-update="stream">
       <%= for {todo_id, todo} <- @streams.todos do %>
@@ -25,6 +27,14 @@ defmodule RangerWeb.TodoLive do
   def mount(_, _, socket) do
     changeset = Todo.changeset(%{})
     todos = Todo |> Repo.all()
+
+    # * just for fun :) playing with Map.from_struct()ß
+
+    # todos =
+    #   Todo
+    #   |> Repo.get(1)
+    #   |> Map.from_struct()
+    #   |> List.wrap()
 
     {
       :ok,
