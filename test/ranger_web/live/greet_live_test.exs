@@ -13,7 +13,7 @@ defmodule RangerWeb.GreetLiveTest do
 
   test "upgrade request", %{conn: conn} do
     {:ok, view, html} = live(conn, "/greet")
-    dbg(view.module)
+    dbg(view)
     assert html =~ "Welcome to Testing LiveView"
   end
 end
