@@ -2,7 +2,7 @@ defmodule RangerWeb.AboutComponents do
   use Phoenix.Component
 
   attr :type, :string,
-  # * giving a predefined list means that the item should be one of these
+    # * giving a predefined list means that the item should be one of these
     values: ["hobbit", "wizard", "human", "elf", "dwarf"],
     required: true
 

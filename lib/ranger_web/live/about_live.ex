@@ -7,6 +7,9 @@ defmodule RangerWeb.AboutLive do
 
   alias Ranger.FellowshipMember
 
+  # member.name and member.type are place inside a flex container using flex-row
+  # member.description placed on its own
+
   def render(assigns) do
     ~H"""
     <div class="grid grid-cols-2 gap-4 space-x-2">

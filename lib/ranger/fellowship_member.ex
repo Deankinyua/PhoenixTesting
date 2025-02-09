@@ -1,5 +1,4 @@
 defmodule Ranger.FellowshipMember do
-
   alias Ranger.FellowshipMember
   defstruct [:name, :type, :description]
 
