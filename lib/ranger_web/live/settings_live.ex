@@ -20,6 +20,7 @@ defmodule RangerWeb.SettingsLive do
     {:ok, assign(socket, user: user)}
   end
 
+  @spec handle_info({:updated_user, any()}, map()) :: {:noreply, map()}
   def handle_info({:updated_user, user}, socket) do
     socket
     |> assign(:user, user)
@@ -28,6 +29,7 @@ defmodule RangerWeb.SettingsLive do
 
   defp noreply(socket), do: {:noreply, socket}
 
+  # fetches user by id
   defp get_user(user_id) do
     Repo.get(User, user_id)
   end

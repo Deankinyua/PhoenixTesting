@@ -3,6 +3,10 @@ defmodule RangerWeb.SettingsLive.EditableInputComponent do
 
   alias Ranger.{Repo, User}
 
+  # * Look at the else block keenly : on mount we just render the text i.e
+  # * use the @field to grab the actual value from the @user struct
+  # * When we click inside the field it actually sends causes the event "edit" to be triggered
+
   def render(assigns) do
     ~H"""
     <div class="max-w-md mx-auto">

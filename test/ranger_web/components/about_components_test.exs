@@ -56,8 +56,6 @@ defmodule RangerWeb.AboutComponentsTest do
         </.card>
         """)
 
-      dbg(card)
-
       assert card =~ "This is the body"
     end
   end
