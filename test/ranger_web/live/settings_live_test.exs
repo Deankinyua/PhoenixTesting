@@ -23,11 +23,11 @@ defmodule RangerWeb.SettingsLiveTest do
 
     user_id = user.id
 
-    {:ok, view, html} = live(conn, "/users/#{user_id}/settings")
+    {:ok, view, _html} = live(conn, "/users/#{user_id}/settings")
 
     element(view, "#name") |> render_click()
 
-    html =
+    _html =
       form(view, "#name-form", %{name: "Lucy Watiri"})
       |> render_submit()
 
@@ -41,11 +41,11 @@ defmodule RangerWeb.SettingsLiveTest do
 
     user_id = user.id
 
-    {:ok, view, html} = live(conn, "/users/#{user_id}/settings")
+    {:ok, view, _html} = live(conn, "/users/#{user_id}/settings")
 
     element(view, "#email") |> render_click()
 
-    html =
+    _html =
       form(view, "#email-form", %{email: "namshon@gmail.com"})
       |> render_submit()
 
