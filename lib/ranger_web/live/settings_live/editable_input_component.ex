@@ -54,6 +54,7 @@ defmodule RangerWeb.SettingsLive.EditableInputComponent do
     |> noreply()
   end
 
+  # * The  phx-target={@myself} ensures that we handle the event in our live_component
   def handle_event("cancel", _, socket) do
     socket
     |> assign(:edit, false)
