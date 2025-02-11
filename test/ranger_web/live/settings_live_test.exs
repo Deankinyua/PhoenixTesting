@@ -18,7 +18,7 @@ defmodule RangerWeb.SettingsLiveTest do
     assert html =~ user.email
   end
 
-  test "testing state and form submission", %{conn: conn} do
+  test "testing state and user editing their name", %{conn: conn} do
     user = create_user(%{name: "Marion Kinyua", email: "ephantusmarion@gmail.com"})
 
     user_id = user.id
@@ -34,6 +34,22 @@ defmodule RangerWeb.SettingsLiveTest do
     assert has_element?(view, "#name", "Lucy Watiri")
 
     assert has_element?(view, "#email", "ephantusmarion@gmail.com")
+  end
+
+  test "testing state and user editing their email", %{conn: conn} do
+    user = create_user(%{name: "Namshon Ombui", email: "ombui@gmail.com"})
+
+    user_id = user.id
+
+    {:ok, view, html} = live(conn, "/users/#{user_id}/settings")
+
+    element(view, "#email") |> render_click()
+
+    html =
+      form(view, "#email-form", %{email: "namshon@gmail.com"})
+      |> render_submit()
+
+    assert has_element?(view, "#email", "namshon@gmail.com")
   end
 
   defp create_user(params \\ %{}) do
